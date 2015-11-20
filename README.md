@@ -8,7 +8,7 @@ https://registry.hub.docker.com/u/mcandre/docker-zookeeper/
 
 ```
 $ make
-CONTAINER=$(docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 mcandre/docker-zookeeper:3.4.6)
+CONTAINER=$(docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 mcandre/docker-zookeeper:latest)
 docker exec $(CONTAINER) zkCli.sh ls /
 Connecting to localhost:2181
 2015-11-20 00:19:55,858 [myid:] - INFO  [main:Environment@100] - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
