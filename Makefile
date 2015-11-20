@@ -17,7 +17,8 @@ build: Dockerfile
 
 run: clean-containers build
 	$(eval CONTAINER=$(shell docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 $(IMAGE)))
-	docker exec $(CONTAINER) zkCli.sh ls /
+	docker exec $(CONTAINER) sh -c 'echo "create /dog moon" | zkCli.sh'
+	docker exec $(CONTAINER) sh -c 'echo "get /dog" | zkCli.sh'
 
 clean-containers:
 	-docker ps -a | grep -v IMAGE | awk '{ print $$1 }' | xargs docker rm -f
