@@ -1,4 +1,4 @@
-IMAGE=mcandre/docker-zookeeper:3.4.6
+IMAGE=mcandre/docker-zookeeper:3.3.6
 
 export LOCALHOST=$$(docker-machine ip default)
 
