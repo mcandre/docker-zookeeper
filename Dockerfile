@@ -6,4 +6,4 @@ ADD http://apache.mirrors.lucidnetworks.net/zookeeper/zookeeper-3.4.6/zookeeper-
 RUN tar xvf /zookeeper-3.4.6.tar.gz && \
     cp /zookeeper-3.4.6/conf/zoo_sample.cfg /zookeeper-3.4.6/conf/zoo.cfg
 EXPOSE 2181 2888 3888
-ENTRYPOINT /zookeeper-3.4.6/bin/zkServer.sh start-foreground
+ENTRYPOINT ["/zookeeper-3.4.6/bin/zkServer.sh", "start-foreground"]
